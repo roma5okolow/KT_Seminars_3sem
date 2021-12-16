@@ -1,0 +1,18 @@
+flock
+advisory
+
+fcntl(file control)
+fcntl(int fd, inc cmd [F_GETLK, F_SETLK, F_SETLKW], ...)
+... = 
+struct flock{
+	...
+	short L_type; - F_RDLCK, F_WRLCK, F_UNLCK;
+					F_OFD_SETLK, F_OFD_WRLCK, F_OFD_SETLKW
+	short L_whence; same as seek
+	off_t L_start;
+	off_t L_len;
+	pid_t L_pid;
+		для F_OFD L_pid = 0
+}
+
+
